@@ -15,6 +15,7 @@ public:
 		subdivisions = 3;
 		bSetPolyline = true;
 		bClosed = false;
+		vCount = 0;
 	};
 	~ofxSimpleSpline()
 	{

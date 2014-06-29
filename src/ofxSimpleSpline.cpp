@@ -45,7 +45,7 @@ ofVec3f ofxSimpleSpline::getPoint(float  k, vector<ofVec3f>& _cv, bool closed )
 {
 	if(!closed)
 	{
-		if(_cv.size() == 0)	return ofVec3f();
+		if(_cv.size() == 0 || k != k)	return ofVec3f();
 		
 		int maxI = _cv.size()-1;
 		
@@ -54,7 +54,7 @@ ofVec3f ofxSimpleSpline::getPoint(float  k, vector<ofVec3f>& _cv, bool closed )
 		w = point - intPoint,
 		w2 = w * w,
 		w3 = w * w2;
-		
+
 		ofVec3f pa = _cv[ ofClamp( intPoint-1, 0, maxI) ],
 		pb = _cv[ intPoint ],
 		pc = _cv[ ofClamp( intPoint+1, 0, maxI) ],
